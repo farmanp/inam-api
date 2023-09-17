@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UploadController } from './upload/upload.controller';
 import { UploadService } from './upload/upload.service';
+import { SearchController } from './search/search.controller';
+import { DownloadController } from './download/download.controller';
 
 @Module({
   imports: [
@@ -12,7 +14,12 @@ import { UploadService } from './upload/upload.service';
       envFilePath: '.env', // pointing to default .env file
     }),
   ],
-  controllers: [AppController, UploadController],
+  controllers: [
+    AppController,
+    UploadController,
+    SearchController,
+    DownloadController,
+  ],
   providers: [AppService, UploadService],
 })
 export class AppModule {}
